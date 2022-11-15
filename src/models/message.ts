@@ -12,7 +12,7 @@ export const Message = sequelize.define("message", {
     },
 
     username_remitente: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING || null
     },
 
     message:{

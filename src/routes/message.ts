@@ -7,9 +7,9 @@ const router = Router();
 
 router.get("/api/users/:username/messages/inbox", valideteToken, getMessages)
 
-router.get("/api/users/:username/messages/sent",valideteToken, getAllMessages)
+router.get("/api/users/:username/messages/sent", valideteToken, getAllMessages)
 
-router.post("/api/users/:username/messages", valideteToken, sendMessages )
+router.post("/api/users/:username/messages", valideteToken, sendMessages ) 
 
 
 

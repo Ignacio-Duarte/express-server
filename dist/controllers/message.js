@@ -13,21 +13,18 @@ exports.sendMessages = exports.getAllMessages = exports.getMessages = void 0;
 const message_1 = require("../models/message");
 const user_1 = require("../models/user");
 const getMessages = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { remitente } = req.body;
     const listMessages = yield message_1.Message.findAll({
         where: {
-            username_reseptor: req.params["username"],
-            username_remitente: remitente
+            username_reseptor: req.params["username"]
         },
     });
     res.json(listMessages);
 });
 exports.getMessages = getMessages;
 const getAllMessages = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { remitente } = req.body;
     const listMessages = yield message_1.Message.findAll({
         where: {
-            username_remitente: remitente,
+            username_remitente: req.params["username"]
         },
     });
     res.json(listMessages);

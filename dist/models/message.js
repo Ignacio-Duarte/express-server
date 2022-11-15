@@ -13,7 +13,7 @@ exports.Message = connection_1.default.define("message", {
         autoIncrement: true
     },
     username_remitente: {
-        type: sequelize_1.DataTypes.STRING
+        type: sequelize_1.DataTypes.STRING || null
     },
     message: {
         type: sequelize_1.DataTypes.STRING(144)

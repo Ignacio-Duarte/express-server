@@ -34,6 +34,7 @@ class Server {
     }
 
     middleware (){
+
         // Parseo body
         this.app.use(express.json())
 

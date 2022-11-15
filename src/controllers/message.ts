@@ -3,12 +3,9 @@ import { Message } from "../models/message";
 import { User } from "../models/user";
 
 export const getMessages = async (req: Request, res: Response) => {
-  const { remitente } = req.body;
-
   const listMessages = await Message.findAll({
     where: {
-      username_reseptor: req.params["username"],
-      username_remitente: remitente
+      username_reseptor: req.params["username"]
     },
   });
 
@@ -16,11 +13,9 @@ export const getMessages = async (req: Request, res: Response) => {
 };
 
 export const getAllMessages = async (req: Request, res: Response) => {
-  const { remitente } = req.body;
-
   const listMessages = await Message.findAll({
     where: {
-      username_remitente: remitente,
+      username_remitente: req.params["username"]
     },
   });
 
